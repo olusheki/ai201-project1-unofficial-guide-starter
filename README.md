@@ -64,6 +64,24 @@ I'm going to choose what it is actually like to live in each of the residence ha
 
 **Final chunk count:**
 67 chunks across 10 documents
+
+**Five chunk examples:**
+
+=== source: a-review-of-life-in-rosie ===
+After you meander down the short hall from your bed or bathroom, you will find yourself in the common room. Since you can only select the three others who live on your side, this is where life becomes more complicated. If somehow you manage to have another friend, who also has a good number and gets the same floor in the same building as you then, you are home free, but life is never so kind to the typical introverted Brandeis student. So most likely you will find yourself in a living arrangement about as exciting as this year’s virtual Springfest. By that I, of course, mean that the four people living adjacent to you will most likely be strangers you haven’t an inkling of knowledge of.
+
+=== source: a-review-of-life-in-rosie ===
+The ants, which either come in biblical marches or are never there, become less relevant. There is still the issue of the generally ugly nature of the Rosie quad since it is simply paved and dull just like any business major, but the redeeming quality of Rosie is the common room! Rosie offers sophomores who do not want to walk from Grad and cannot get a room in Skyline a place to call their own! It is an apartment where they do not have to cook but can have a lounge and friends around them at all times. It is low maintenance and easy to decorate, but when the design flaw at the heart of it interferes with the student life within it, then it all comes crumbling down. Rosie has so much potential, it is lively and generally party central, but as time sees more unhappy sides of Rosie being forced to share a common room, the whole notion of suite style becomes unappealing. Nevertheless, if you can live with all of that, including the ants and ugly quad, I will let you in on a little secret
+
+=== source: a-review-of-the-foster-mods-living-experience ===
+The Mods were constructed in 1973, and it shows. Despite receiving a major renovation in 2014 that brought the furniture and carpeting to the current Brandeis standard, the place reeks of decay. Rusty hinges and broken cabinets abound, and the concrete steps literally crumble beneath your feet as you approach your own front door. These things are tolerable of course—even charming. Getting a utilities guy to come in and fix something isn’t particularly hard, though wait times can be long. Upon discovering that our six-person Mod only had two kitchen chairs, the utilities men kindly delivered some new ones (and patched up a set of cabinet doors too). They’ve come by to fix locks and plane down warped doors as well.
+
+=== source: hoot-recomends-dorm-essentials ===
+Calli: There are quite a few items in my dorm room that I could not live without; my fan, beanbag chair, the colorful decorations that remind me of home. However, the one item that stands out the most to me is my foam roller. That thing has been through it all with me yet it never fails to make me feel better. Even my dog sees it as the coolest (though forbidden) toy in existence. As a runner, having a roller is a staple to keeping myself feeling fresh. Despite this, you certainly do not need to be a runner to own a foam roller. Hiking across campus and perhaps up the Rabb steps on the daily makes every Brandeis student a perfect foam roller candidate in my eyes. I usually foam roll every night before bed and stretch to decompress. It’s a healthy habit to form as it can relieve most types of leg and back discomfort as long as you do it regularly. Especially considering how much the average student sits everyday, it is important to relieve muscle tension and also increase blood flow.
+
+=== source: is-brandeis-better-yet ===
+In the wake of losing the Lydian String Quartet and Musicology and Music Composition Ph.D. programs due to ongoing budget cuts, this Editorial Board understands that programs in the arts at Brandeis are typically the first to go. The University made that prospect abundantly clear when it silently eliminated Brandeis Arts Engagement, as well as terminated the contract of beloved Prof. Taylor Ackley (MUS) with no discretion to the public. This Board hopes that this reorganization plan will reinstate these lost initiatives and address the plethora of student critiques that have largely been sidelined.
+
 ---
 
 ## Embedding Model
@@ -73,6 +91,74 @@ I'm going to choose what it is actually like to live in each of the residence ha
      what tradeoffs would you weigh in choosing a different model?
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
+
+### Retrieval Examples:
+
+Test query: 'What is it like to live in the Foster Mods?'
+
+-     --- Rank 1 | source: a-review-of-the-foster-mods-living-experience | distance: 0.7629 ---
+     The Foster Mods represent a hamlet of privacy tucked into the armpit of Brandeis University—a verdant armpit brimming with rabbits and gravel and walled on three sides by a thin strand of trees. While these apartments lack the luxury of newer residence halls like Village and Ridgewood, the opportuni
+
+
+- --- Rank 2 | source: a-review-of-the-foster-mods-living-experience | distance: 1.0718 ---
+     The Mods serve their purpose. They aren’t nice, but they are out of the way. They are also less than a minute from the gym, so you can finally start working out. Those with a tight knit group of friends will absolutely love the experience. Choose the lower numbered Mods if you can! They sit atop the
+
+- --- Rank 3 | source: a-review-of-the-foster-mods-living-experience | distance: 1.1128 ---
+     The rustic flare of these apartments, while unsavory to some, is also their main draw. The Mods are out of the way, tucked in the proverbial woods. The Brandeis Police aren’t hanging out here. There aren’t anylowerclassmen around to screw up and summon a fleet of BEMCo cars. It is the most peaceful
+
+- --- Rank 4 | source: a-review-of-the-foster-mods-living-experience | distance: 1.1923 ---
+     The Mods were constructed in 1973, and it shows. Despite receiving a major renovation in 2014 that brought the furniture and carpeting to the current Brandeis standard, the place reeks of decay. Rusty hinges and broken cabinets abound, and the concrete steps literally crumble beneath your feet as yo
+
+- --- Rank 5 | source: a-review-of-the-foster-mods-living-experience | distance: 1.2383 ---
+     Practically speaking, the Mods offer the space for fun. The apartments aren’t stacked on top of each other like in Ridgewood, so stomp away! Though the kitchen and living rooms are technically two different rooms divided by a short staircase, a ledge is the only divider so the spaces breathe. Each l
+
+These are good chunks because they explicitly walk about Foster Mods, a lot of which talk about their actual living experience. The top chunks are exactly from the document where someone is talking about their living experience, so that works well.
+
+---
+
+Test query: 'What are some halls with good hangout spots?'
+
+- --- Rank 1 | source: third-spaces | distance: 0.9232 ---
+     When asked the same question, Finkelstein said, “I mean in mine there’s not a lot there other than a fewcouches, so I’ve never really seen anyone hang out there. [In] the lounge under Scheffres I used to see people playing ping pong a lot but I think the table broke.”
+
+     Brandeis’ common rooms have t
+
+- --- Rank 2 | source: third-spaces | distance: 0.9874 ---
+     The options for first-year dorms can vary from location to location, but one common factor is the presence of some type of lounge or common room. North Quad’s Scheffres Hall and Gordon Hall have the Polaris Lounge. Massell Quad’s Shapiro Hall also has the Shapiro Lounge, affectionately dubbed the “S
+
+- --- Rank 3 | source: third-spaces | distance: 1.0354 ---
+     Roy described the common room as a “third space,” a place other than home or work since those two placeshold too much weight, or in a university setting, outside of the dorms and the classrooms. Roy said, “I believe that Americans are kind of obsessed with ‘third places’ and that’s kind of why they
+
+- --- Rank 4 | source: is-the-housing-bad | distance: 1.0798 ---
+     - Mundane_Talk_1501: I’m currently in Massell and genuinely I think that it is not that bad, the buildings compared to North Quad is a bit older while North is more new. I like it since it near Sherman dining hall, but hate it that I have to go up the hill every morning other than that it’s actually
+
+- --- Rank 5 | source: freshamn-dorms | distance: 1.0872 ---
+     - Jsnake47: Freshmen are in Massell Quad and North Quad. The biggest thing to avoid is getting a forced triple—most of which are in Shapiro—or just the Shapiro basement at all. Besides that, Massell is much closer to a dining hall and the sciences whereas North is at the top of campus and is close t
+
+The top 3 chunks are the most relevant, explicitly stating the names of some of the residence hall lounges and what people might in them. However, the last two chunks aren't really related, just talking primarily about freshman housing. 
+
+---
+
+Test query: 'Which halls has the best view of campus?'
+
+- --- Rank 1 | source: third-spaces | distance: 0.7837 ---
+     The options for first-year dorms can vary from location to location, but one common factor is the presence of some type of lounge or common room. North Quad’s Scheffres Hall and Gordon Hall have the Polaris Lounge. Massell Quad’s Shapiro Hall also has the Shapiro Lounge, affectionately dubbed the “S
+
+- --- Rank 2 | source: is-the-housing-bad | distance: 0.8085 ---
+     Away_Mycologist8366: Can anyone give any feedback on first year dorms at Brandeis/specific feedback on different Quads? Also is it true that Brandeis will not let you choose a roommate your first year?
+
+     - ItsMrShroom: yes. The only thing you can choose is ur preference for a single, double, triple, 
+
+- --- Rank 3 | source: freshamn-dorms | distance: 0.8344 ---
+     - glitterxtimes: former freshman/rising sophomore here!!! i lived in renfield hall, which is in massell. north is the better quad all around, but my personal ranking would be reitman and cable (north), renfield, shapiro (both in massell), gordon and scheffres (north) and then deroy and usen (massell
+
+- --- Rank 4 | source: freshamn-dorms | distance: 0.9318 ---
+     - Jsnake47: Freshmen are in Massell Quad and North Quad. The biggest thing to avoid is getting a forced triple—most of which are in Shapiro—or just the Shapiro basement at all. Besides that, Massell is much closer to a dining hall and the sciences whereas North is at the top of campus and is close t
+
+- --- Rank 5 | source: freshamn-dorms | distance: 0.9343 ---
+     Such-Skirt2637: Okay so like how do freshman dorm assignments work? I filled out the housing app so everything is all ready (and i know my roommate is random). Do i get my roommate and dorm at once? Or do I get to pick which dorm building I want?
+
+     - Jsnake47: It’s all random. You’ll know your roomma
 
 **Model used:**
 
@@ -92,6 +178,31 @@ It looks like the model handled the blend of documents fine, and also it recogni
      choices (e.g., how you formatted the context, whether you filtered low-relevance chunks).
      Do not just say "I told it to use the documents" — show the actual instruction or explain
      the mechanism. -->
+
+**System Response Examples**
+
+Prompt: Which halls have some public lounges to hang out in?
+
+Output: Scheffres Hall and Gordon Hall have the Polaris Lounge, and Shapiro Hall has the Shapiro Lounge (also known as the "Schlounge").
+
+Sources:
+- Third Spaces  (distance: 0.7377)
+- Freshamn Dorms  (distance: 1.037)
+- A Review Of The Foster Mods Living Experience (distance: 1.1108)
+
+---
+
+Prompt: What do people say about living in freshman housing?
+
+Output: Moira Koleno '29 said it's nice to have a place to step out of her dorm room, but she wishes the common room in Renfield was separate from the kitchen because it's always smelly due to leftover food. Another student mentioned that their common room wasn't used much, with only a few couches and no activities.
+
+Sources:
+- Third Spaces  (distance: 0.9144)
+- Charles River Apartment Housing  (distance: 0.9259)
+- A Review Of The Foster Mods Living Experience  (distance: 0.9936)
+- Freshamn Dorms  (distance: 0.9971)
+
+---
 
 **System prompt grounding instruction:**
 

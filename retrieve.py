@@ -88,7 +88,7 @@ def retrieve(query: str, collection, model, k: int = 5) -> list[dict]:
 if __name__ == "__main__":
     collection, model = build_vector_store()
 
-    test_query = "What is it like to live in the Foster Mods?"
+    test_query = "Which halls has the best view of campus?"
     print(f"\nTest query: '{test_query}'\n")
 
     hits = retrieve(test_query, collection, model)
